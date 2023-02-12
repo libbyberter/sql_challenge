@@ -1,0 +1,24 @@
+DEPARTMENTS,,,DEPT_EMP,,,DEPT_MANAGER,,,EMPLOYEES,,,,,,
+one,,,one,many,,many,one,,one,many,,,,,
+dept_no,dept_name,,emp_no,dept_no,,dept_no,emp_no,,emp_no,emp_title_id,birth_date,first_name,last_name,sex,hire_date
+d001,Marketing,,10001,d005,,d001,110022,,473302,s0001,7/25/1953,Hideyuki,Zallocco,M,4/28/1990
+d002,Finance,,10002,d007,,d001,110039,,475053,e0002,11/18/1954,Byong,Delgrande,F,9/7/1991
+d003,Human Resources,,10003,d004,,d002,110085,,57444,e0002,1/30/1958,Berry,Babb,F,3/21/1992
+d004,Production,,10004,d004,,d002,110114,,421786,s0001,9/28/1957,Xiong,Verhoeff,M,11/26/1987
+d005,Development,,10005,d003,,d003,110183,,282238,e0003,10/28/1952,Abdelkader,Baumann,F,1/18/1991
+d006,Quality Management,,10006,d005,,d003,110228,,263976,e0003,10/30/1959,Eran,Cusworth,M,11/14/1986
+d007,Sales,,10007,d008,,d004,110303,,273487,s0001,4/14/1957,Christoph,Parfitt,M,6/28/1991
+d008,Research,,10008,d005,,d004,110344,,461591,s0002,11/17/1964,Xudong,Samarati,M,11/13/1985
+d009,Customer Service,,10009,d006,,d004,110386,,477657,e0002,12/18/1962,Lihong,Magliocco,M,10/23/1993
+,,,,,,,,,219881,s0002,4/24/1956,Kwangyoen,Speek,F,2/14/1993
+,,,,,,,,,,,,,,,
+SALARIES,,,TITLES,,,,,,,,,,,,
+one,,,one,,,,,,,,,,,,
+emp_no,salary,,title_id,title,,,,,,,,,,,
+10001,60117,,s0001,Staff,,,,,,,,,,,
+10002,65828,,s0002,Senior Staff,,,,,,,,,,,
+10003,40006,,e0001,Assistant Engineer,,,,,,,,,,,
+10004,40054,,e0002,Engineer,,,,,,,,,,,
+10005,78228,,e0003,Senior Engineer,,,,,,,,,,,
+10006,40000,,e0004,Technique Leader,,,,,,,,,,,
+10007,56724,,m0001,Manager,,,,,,,,,,,
