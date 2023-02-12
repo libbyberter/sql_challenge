@@ -76,3 +76,73 @@ CREATE TABLE salaries (
 
 select * from salaries;
 ---
+
+--Data Analysis
+
+
+-- question 1
+select
+    employees.emp_no,
+    employees.last_name,
+    employees.first_name,
+    employees.sex,
+    salaries.salary
+from
+    employees,
+    salaries
+where
+    employees.emp_no = salaries.emp_no;
+
+-- question 2
+select
+    first_name,
+    last_name,
+    hire_date
+from
+    employees
+where
+    date_part('year', hire_date) = 1986;
+
+-- question 3
+select
+    concat(employees.first_name,' ',employees.last_name) as Manager,
+    departments.dept_name,
+    departments.dept_no,
+    dept_manager.emp_no,
+    employees.first_name,
+    employees.last_name
+from
+    employees,
+	departments,
+    dept_manager
+where
+    departments.dept_no = dept_manager.dept_no and
+    employees.emp_no = dept_manager.emp_no;
+
+-- question 4
+select
+    concat(employees.first_name,' ',employees.last_name) as Employee,
+    employees.emp_no,
+    dept_emp.dept_no,
+    departments.dept_name,
+    employees.last_name,
+    employees.first_name
+from
+    employees,
+	departments,
+    dept_emp
+where
+    departments.dept_no = dept_emp.dept_no and
+    employees.emp_no = dept_emp.emp_no;
+	
+-- question 5
+select
+    first_name,
+    last_name,
+    sex
+from employees
+where 
+    first_name = 'Hercules' and
+    last_name like 'B%';
+	
+-- question 6
