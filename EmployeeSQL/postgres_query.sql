@@ -146,3 +146,48 @@ where
     last_name like 'B%';
 	
 -- question 6
+select
+	concat(first_name,' ',last_name) as Employee,
+	emp_no,
+	last_name,
+	first_name
+from employees
+where emp_no in
+(
+	select emp_no
+	from dept_emp
+	where dept_no in 
+	(
+		select dept_no
+		from departments
+		where dept_name = 'Sales'
+	)
+)
+order by emp_no;
+
+-- question 7
+select
+	concat(employees.first_name,' ',employees.last_name) as Employee,
+	employees.emp_no,
+	employees.last_name,
+	employees.first_name,
+	departments.dept_name
+from 
+	employees,
+	departments,
+	dept_emp
+where 
+    departments.dept_no = dept_emp.dept_no and
+    employees.emp_no = dept_emp.emp_no and
+	employees.emp_no in
+	(
+		select emp_no
+		from dept_emp
+		where dept_no in 
+		(
+			select dept_no
+			from departments
+			where dept_name in ('Sales','Development')
+		)
+	)
+order by emp_no;

@@ -65,3 +65,28 @@ from employees
 where 
     first_name = 'Hercules' and
     last_name like 'B%';
+
+-- List each employee in the Sales department, 
+-- including their employee number, last name, and first name.
+select
+	concat(first_name,' ',last_name) as Employee,
+	emp_no,
+	last_name,
+	first_name
+from employees
+where emp_no in
+(
+	select emp_no
+	from dept_emp
+	where dept_no in 
+	(
+		select dept_no
+		from departments
+		where dept_name = 'Sales'
+	)
+)
+order by emp_no;
+
+-- List each employee in the Sales and Development departments, 
+-- including their employee number, last name, first name, and department name
+
