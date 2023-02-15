@@ -1,32 +1,32 @@
 departments
 ----
-dept_no varchar PK
-dept_name varchar
+dept_no varchar(30) PK
+dept_name varchar(255)
 
 titles
 ----
-title_id varchar pk
-title varchar
+title_id varchar(30) pk
+title varchar(255)
 
 employees
 ----
 emp_no int pk
-emp_title_id varchar fk >- titles.title_id
+emp_title_id varchar(30) fk >- titles.title_id
 birth_date date
-first_name varchar
-last_name varchar
-sex varchar
+first_name varchar(255)
+last_name varchar(255)
+sex varchar(5)
 hire_date date
 
 dept_emp
 ----
-emp_no int fk - employees.emp_no
-dept_no varchar FK >- departments.dept_no
+emp_no int fk >- employees.emp_no
+dept_no varchar(30) FK >- departments.dept_no
 pk_dept_emp pk (emp_no,dept_no)
 
 dept_manager
 ----
-dept_no varchar fk >- departments.dept_no
+dept_no varchar(30) fk >- departments.dept_no
 emp_no int fk - employees.emp_no
 pk_dept_manager pk (dept_no, emp_no)
 

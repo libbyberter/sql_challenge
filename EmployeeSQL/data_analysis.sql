@@ -89,4 +89,18 @@ order by emp_no;
 
 -- List each employee in the Sales and Development departments, 
 -- including their employee number, last name, first name, and department name
+Select concat(e.first_name,' ',e.last_name) as Employee, e.emp_no, e.last_name, e.first_name, d.dept_name
+from employees e
+left join dept_emp de
+on e.emp_no = de.emp_no
+left join departments d
+on de.dept_no = d.dept_no
+where d.dept_name in ('Sales', 'Development');
+
+-- List the frequency counts, in descending order, of all the employee last names 
+-- (that is, how many employees share each last name).
+select last_name, count(last_name) As name_count
+from employees
+group by last_name
+order by name_count desc;
 
